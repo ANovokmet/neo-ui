@@ -1,0 +1,47 @@
+<template>
+    <div class="marquee">
+        <div class="marquee__content">
+            <span>Item 1</span>
+            <span>// Item 2 //</span>
+            <span>Item 3</span>
+        </div>
+        <div class="marquee__content" aria-hidden="true">
+            <span>Item 1</span>
+            <span>// Item 2 //</span>
+            <span>Item 3</span>
+        </div>
+    </div>
+</template>
+<style>
+    .marquee {
+        background-color: #000;
+        color: #fff;
+
+        padding: .5em 0;
+
+        display: flex;
+        overflow: hidden;
+    }
+
+    .marquee__content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        min-width: 100%;
+        animation: scroll 10s linear infinite;
+    }
+
+    .marquee:hover .marquee__content {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(calc(-100%));
+        }
+    }
+</style>

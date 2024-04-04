@@ -1,0 +1,84 @@
+<template>
+    <div class="browser">
+        <div class="browser-bar">
+            <div class="browser-bar-dot"></div>
+            <div class="browser-bar-dot"></div>
+            <div class="browser-bar-dot"></div>
+
+            <div class="browser-bar-close"></div>
+        </div>
+        <div class="browser-content">
+            <div class="box"></div>
+        </div>
+    </div>
+</template>
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .browser {
+        border-radius: 10px;
+        --shadow-offset: 14px;
+        box-shadow: var(--shadow-offset) var(--shadow-offset) 0 #ff8ac5;
+    }
+
+    .browser-bar {
+        align-items: center;
+        background-color: #ff9aa2;
+        border-left: 3px solid #000;
+        border-right: 3px solid #000;
+        border-top: 3px solid #000;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex;
+        height: 50px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .browser-content {
+        background-color: #321c64;
+        border: 3px solid #000;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 32px;
+    }
+
+    .browser-bar-dot+.browser-bar-dot {
+        margin-left: 16px;
+    }
+
+    .browser-bar-dot {
+        border: 3px solid #000;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+    }
+
+    .browser-bar-close {
+        height: 22.5px;
+        margin-left: auto;
+        position: relative;
+        width: 15px;
+    }
+
+    .browser-bar-close::before {
+        transform: rotate(45deg);
+    }
+
+    .browser-bar-close::after {
+        transform: rotate(-45deg);
+    }
+
+    .browser-bar-close::after,
+    .browser-bar-close::before {
+        background-color: #000;
+        content: "";
+        display: block;
+        height: 22.5px;
+        position: absolute;
+        width: 3px;
+    }
+</style>

@@ -1,0 +1,100 @@
+<template>
+    <section class="section blue">
+        <div class="card clickable">
+            Card content
+        </div>
+    </section>
+    <section class="section green">
+        <div class="card">
+            Card content
+        </div>
+    </section>
+    <section class="section orange">
+        <div class="card">
+            Card content
+        </div>
+    </section>
+    <section class="section orange-alt">
+        <div class="card">
+            Card content
+        </div>
+    </section>
+    <section class="section pink-alt">
+        <div class="card">
+            Card content
+        </div>
+    </section>
+    <section class="section purple">
+        <div class="card">
+            Card content
+        </div>
+    </section>
+    <section class="section pink">
+        <div class="card">
+            Card content
+        </div>
+    </section>
+</template>
+<style>
+    .card {
+        background-color: #fff;
+        border: 3px solid #000;
+        padding: 24px;
+        box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color, #000);
+
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .section {
+        background-color: var(--background-color, #d1ffee);
+        padding: 64px 24px;
+    }
+
+    .section:not(:last-child) {
+        border-bottom: 5px solid #000;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    .blue {
+        --background-color: #00b3f4;
+        --shadow-color: #321c64;
+    }
+
+    .green {
+        --background-color: #d1ffee;
+        --shadow-color: #2ac3a2;
+    }
+
+    .orange {
+        --background-color: #ffb587;
+        --shadow-color: #ff8a50;
+    }
+
+    .orange-alt {
+        --background-color: #ffd567;
+        --shadow-color: #e27f2e;
+    }
+
+    .pink-alt {
+        --background-color: #ffdfe7;
+        --shadow-color: #08403f;
+    }
+
+    .purple {
+        --background-color: #e7dfff;
+        --shadow-color: #9059ff;
+    }
+
+    .pink {
+        --background-color: #ffdfe7;
+        --shadow-color: #ff8ac5;
+    }
+
+    :root {
+        --shadow-offset: 14px;
+    }
+</style>

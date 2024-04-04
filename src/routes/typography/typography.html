@@ -1,0 +1,24 @@
+<template>
+    <h1>Typography</h1>
+    <h1 class="text-outline-stroke">Typography</h1>
+    <h1 class="text-outline-shadow">Typography</h1>
+</template>
+<style>
+    h1 {
+        font-size: 4rem;
+    }
+
+    .text-outline-stroke {
+        color: transparent;
+        -webkit-text-stroke: 1px black;
+    }
+
+    .text-outline-shadow {
+        color: rgb(245, 235, 215);
+        text-shadow:
+            1px 1px 0 #000,
+            -1px 1px 0 #000,
+            -1px -1px 0 #000,
+            1px -1px 0 #000;
+    }
+</style>

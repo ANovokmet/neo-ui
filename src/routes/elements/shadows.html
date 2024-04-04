@@ -1,0 +1,58 @@
+<template>
+    <div class="container">
+        <div class="box shadow border"></div>
+        <div class="box shadow border medium"></div>
+        <div class="box shadow border large"></div>
+    </div>
+</template>
+<style>
+    .shadow {
+        box-shadow: var(--shadow-offset) var(--shadow-offset) 0 #000;
+        --shadow-offset: 4px;
+    }
+
+    .shadow.medium {
+        --shadow-offset: 8px;
+    }
+
+    .shadow.large {
+        --shadow-offset: 14px;
+    }
+
+    .border {
+        border: 2px solid rgb(0 0 0);
+    }
+
+    .border.large {
+        border: 3px solid rgb(0 0 0);
+    }
+
+    .hoverable {
+        
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+    }
+    .box.medium {
+        width: 200px;
+        height: 150px;
+    }
+    .box.large {
+        width: 500px;
+        height: 200px;
+    }
+    .container {
+        display: flex;
+        gap: 2rem;;
+    }
+
+    :root {
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --shadow-offset: 4px;
+    }
+</style>

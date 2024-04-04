@@ -1,0 +1,19 @@
+@import url("../node_modules/normalize.css/normalize.css");
+
+*, ::after, ::before
+{
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+html, body {
+    width: 100%;
+}
+
+html {
+  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+  padding: 20px;
+}

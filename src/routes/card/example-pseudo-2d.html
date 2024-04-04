@@ -1,0 +1,132 @@
+<template>
+    <div class="box">
+        <div class="cube">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+        <div class="cube-calc">
+            Using CSS variables.
+        </div>
+        <div class="cube-calc c-1">
+            Using CSS variables.
+        </div>
+        <div class="cube-calc c-2">
+            Using CSS variables.
+        </div>
+        <div class="cube-calc c-3">
+            Using CSS variables.
+        </div>
+    </div>
+</template>
+<style>
+    .cube {
+        position: relative;
+        padding: 20px;
+        border: 2px solid #000;
+        background: #ff8ac5;
+    }
+
+    .cube::before {
+        content: '';
+        position: absolute;
+        left: -18px;
+        width: 16px;
+        top: 3px;
+        height: calc(100% + 4px);
+        border: 2px solid #000;
+        transform: skewY(-30deg);
+        z-index: 0;
+        border-right-width: 0;
+    }
+
+    .cube::after {
+        content: '';
+        position: absolute;
+        bottom: -11px;
+        left: -10px;
+        height: 9px;
+        width: calc(100% + 4px);
+        border: 2px solid #000;
+        transform: skewX(-60deg);
+        z-index: -1;
+        border-top-width: 0;
+        border-left-width: 0;
+    }
+
+    .cube-calc {
+        --border-width: 2px;
+        --depth: 16px;
+        --angle: -30deg;
+
+        --width: var(--depth);
+        --height: calc(abs(tan(var(--angle)) * var(--depth)));
+
+
+        border: var(--border-width) solid #000;
+        position: relative;
+        padding: 20px;
+        background: #ff8ac5;
+    }
+
+    .c-1 {
+        --border-width: 1px;
+        --depth: 16px;
+        --angle: -30deg;
+    }
+    .c-2 {
+        --border-width: 2px;
+        --depth: 24px;
+        --angle: -30deg;
+    }
+    .c-3 {
+        --border-width: 3px;
+        --depth: 16px;
+        --angle: -60deg;
+    }
+
+    .cube-calc::before {
+        content: '';
+        position: absolute;
+
+        --top: calc(var(--height) / 2 - var(--border-width));
+
+        left: calc(-1 * var(--width) - var(--border-width));
+        width: var(--width);
+        top: var(--top);
+        height: calc(100% + 2 * var(--border-width));
+        transform: skewY(var(--angle));
+
+        border: var(--border-width) solid #000;
+        z-index: 0;
+        border-right-width: 0;
+    }
+
+    .cube-calc::after {
+        content: '';
+        position: absolute;
+
+        --left: calc(var(--width) / -2 - var(--border-width));
+        --angle-opposite: calc(-90deg - var(--angle));
+
+        bottom: calc(-1 * var(--height) - var(--border-width));
+        left: var(--left);
+        height: var(--height);
+        width: calc(100% + 2 * var(--border-width));
+        transform: skewX(var(--angle-opposite));
+
+        border: var(--border-width) solid #000;
+        z-index: -1;
+        border-top-width: 0;
+        border-left-width: 0;
+    }
+
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    body {
+        padding: 40px;
+        background-color: #ffdfe7;
+    }
+</style>
