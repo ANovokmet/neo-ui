@@ -10,9 +10,12 @@ title: neo-ui
 
 Collection of (neobrutalist) UI elements.
 
-Most were copied from the following sites:
+Most were taken from the following sites:
 - https://gumroad.com/
 - https://www.mozilla.org/en-US/firefox/family/
+- https://neubrutalism-ui-app.vercel.app/
+
+All credits go to the respective owners.
 
 ## Usage
 
